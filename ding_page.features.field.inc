@@ -10,7 +10,7 @@
 function ding_page_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-ding_page-ding_content_tags'
+  // Exported field: 'node-ding_page-ding_content_tags'.
   $fields['node-ding_page-ding_content_tags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function ding_page_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -100,7 +101,7 @@ function ding_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ding_page-field_category'
+  // Exported field: 'node-ding_page-field_category'.
   $fields['node-ding_page-field_category'] = array(
     'field_config' => array(
       'active' => '1',
@@ -121,6 +122,7 @@ function ding_page_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -176,7 +178,7 @@ function ding_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ding_page-field_ding_body'
+  // Exported field: 'node-ding_page-field_ding_body'.
   $fields['node-ding_page-field_ding_body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -197,6 +199,7 @@ function ding_page_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -253,7 +256,7 @@ function ding_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ding_page-field_ding_material'
+  // Exported field: 'node-ding_page-field_ding_material'.
   $fields['node-ding_page-field_ding_material'] = array(
     'field_config' => array(
       'active' => '1',
@@ -263,6 +266,7 @@ function ding_page_field_default_fields() {
       'field_name' => 'field_ding_material',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'ting_reference',
       'settings' => array(),
       'translatable' => '0',
@@ -312,7 +316,7 @@ function ding_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ding_page-field_list_image'
+  // Exported field: 'node-ding_page-field_list_image'.
   $fields['node-ding_page-field_list_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -333,9 +337,11 @@ function ding_page_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
+        'profile2_private' => FALSE,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -395,6 +401,7 @@ function ding_page_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
+        'default_image' => 0,
         'file_directory' => 'list_image/page',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -405,18 +412,26 @@ function ding_page_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'image',
+        'module' => 'media',
         'settings' => array(
+          'allowed_schemes' => array(
+            0 => 'public',
+            1 => 'private',
+          ),
+          'allowed_types' => array(
+            0 => 'image',
+          ),
+          'browser_plugins' => array(),
           'preview_image_style' => 'square_thumbnail',
           'progress_indicator' => 'throbber',
         ),
-        'type' => 'image_image',
+        'type' => 'media_generic',
         'weight' => '3',
       ),
     ),
   );
 
-  // Exported field: 'node-ding_page-field_main_image'
+  // Exported field: 'node-ding_page-field_main_image'.
   $fields['node-ding_page-field_main_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -437,9 +452,11 @@ function ding_page_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
+        'profile2_private' => FALSE,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -491,6 +508,7 @@ function ding_page_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
+        'default_image' => 0,
         'file_directory' => 'main_image/page',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -501,12 +519,20 @@ function ding_page_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'image',
+        'module' => 'media',
         'settings' => array(
+          'allowed_schemes' => array(
+            0 => 'public',
+            1 => 'private',
+          ),
+          'allowed_types' => array(
+            0 => 'image',
+          ),
+          'browser_plugins' => array(),
           'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
-        'type' => 'image_image',
+        'type' => 'media_generic',
         'weight' => '2',
       ),
     ),
