@@ -52,8 +52,9 @@ function ding_page_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'hidden',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => '6',
         ),
         'search_index' => array(
@@ -72,7 +73,7 @@ function ding_page_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'teaser_highlight' => array(
           'label' => 'above',
@@ -149,9 +150,10 @@ function ding_page_field_default_fields() {
           'weight' => '3',
         ),
         'teaser' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'hidden',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => '0',
         ),
         'teaser_highlight' => array(
@@ -225,7 +227,7 @@ function ding_page_field_default_fields() {
             'trim_length' => '60',
           ),
           'type' => 'text_summary_or_trimmed',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'teaser_highlight' => array(
           'label' => 'above',
@@ -290,7 +292,7 @@ function ding_page_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '3',
         ),
         'teaser_highlight' => array(
           'label' => 'above',
@@ -386,7 +388,7 @@ function ding_page_field_default_fields() {
             'image_style' => 'ding_vert_small',
           ),
           'type' => 'image',
-          'weight' => '0',
+          'weight' => '1',
         ),
         'teaser_highlight' => array(
           'label' => 'above',
