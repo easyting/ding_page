@@ -8,7 +8,6 @@ project = ding_page
 dependencies[] = cache_actions
 dependencies[] = ctools
 dependencies[] = features
-dependencies[] = media
 dependencies[] = menu
 dependencies[] = og
 dependencies[] = page_manager
