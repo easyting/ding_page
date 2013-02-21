@@ -20,6 +20,7 @@ features[features_api][] = api:1
 features[field][] = node-ding_page-ding_content_tags
 features[field][] = node-ding_page-field_category
 features[field][] = node-ding_page-field_ding_body
+features[field][] = node-ding_page-field_ding_material
 features[node][] = ding_page
 features[page_manager_handlers][] = node_view_panel_context_4
 features[rules_config][] = rules_ding_page_node_update
