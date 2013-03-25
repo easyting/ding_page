@@ -395,12 +395,13 @@ function ding_page_field_default_fields() {
           'weight' => 0,
         ),
         'teaser' => array(
-          'label' => 'above',
-          'module' => 'file_entity',
+          'label' => 'hidden',
+          'module' => 'image',
           'settings' => array(
-            'file_view_mode' => 'default',
+            'image_link' => 'content',
+            'image_style' => 'square_thumbnail',
           ),
-          'type' => 'file_rendered',
+          'type' => 'image',
           'weight' => '0',
         ),
         'teaser_highlight' => array(
