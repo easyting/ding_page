@@ -55,7 +55,7 @@ function ding_page_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '6',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'above',
@@ -153,7 +153,7 @@ function ding_page_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'above',
@@ -231,7 +231,7 @@ function ding_page_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -306,7 +306,7 @@ function ding_page_field_default_fields() {
             'view_mode' => 'teaser',
           ),
           'type' => 'ting_reference_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'full' => array(
           'label' => 'above',
@@ -344,14 +344,14 @@ function ding_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ding_page-field_page_list_image'.
-  $fields['node-ding_page-field_page_list_image'] = array(
+  // Exported field: 'node-ding_page-field_list_image'.
+  $fields['node-ding_page-field_list_image'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_page_list_image',
+      'field_name' => 'field_list_image',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -378,26 +378,16 @@ function ding_page_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'ding_page',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Image will be used in various lists (search results etc.)',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-          ),
-          'type' => 'image',
-          'weight' => 7,
-        ),
-        'full' => array(
-          'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '4',
         ),
-        'teaser' => array(
-          'label' => 'hidden',
+        'search_index' => array(
+          'label' => 'above',
           'module' => 'image',
           'settings' => array(
             'image_link' => 'content',
@@ -405,6 +395,26 @@ function ding_page_field_default_fields() {
           ),
           'type' => 'image',
           'weight' => '0',
+        ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'content',
+            'image_style' => '',
+          ),
+          'type' => 'image',
+          'weight' => '0',
+        ),
+        'teaser' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'content',
+            'image_style' => 'ding_vert_small',
+          ),
+          'type' => 'image',
+          'weight' => '1',
         ),
         'teaser_highlight' => array(
           'label' => 'above',
@@ -414,13 +424,13 @@ function ding_page_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_page_list_image',
+      'field_name' => 'field_list_image',
       'label' => 'List image',
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
         'default_image' => 0,
-        'file_directory' => '',
+        'file_directory' => 'list_image/page',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
         'max_resolution' => '',
@@ -433,27 +443,18 @@ function ding_page_field_default_fields() {
         'module' => 'media',
         'settings' => array(
           'allowed_schemes' => array(
-            'public' => 'public',
+            0 => 'public',
+            1 => 'private',
           ),
           'allowed_types' => array(
-            'audio' => 0,
-            'document' => 0,
-            'image' => 'image',
-            'video' => 0,
+            0 => 'image',
           ),
-          'browser_plugins' => array(
-            'artesis_media_browser--media_browser_1' => 0,
-            'dams_media_browser--media_browser_2' => 'dams_media_browser--media_browser_2',
-            'dams_media_browser--media_browser_3' => 0,
-            'dams_media_browser--media_browser_4' => 0,
-            'dams_media_browser--media_browser_5' => 0,
-            'ding_content' => 0,
-            'upload' => 'upload',
-          ),
+          'browser_plugins' => array(),
+          'preview_image_style' => 'square_thumbnail',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -462,6 +463,7 @@ function ding_page_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Category');
+  t('Image will be used in various lists (search results etc.)');
   t('List image');
   t('Materials');
   t('Tags');
