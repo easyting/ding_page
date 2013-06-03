@@ -102,14 +102,7 @@ function ding_page_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '6',
-        ),
-      ),
+      'form' => array(),
       'display' => array(),
     ),
   );
