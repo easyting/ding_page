@@ -10,3 +10,56 @@ function ding_page_update_7001() {
   menu_delete($menu);
   return t('Pages menu deleted.');
 }
+
+/**
+ * Migrate the data from old list_image field to page_list_image.
+ */
+function ding_page_update_7002() {
+  $tables = array(
+    'field_data_field_list_image' => 'field_data_field_page_list_image',
+    'field_revision_field_list_image' => 'field_revision_field_page_list_image',
+  );
+
+  foreach ($tables as $from => $to) {
+    $result = db_select($from, 'source')
+      ->fields('source', array(
+        'entity_type',
+        'bundle',
+        'deleted',
+        'entity_id',
+        'revision_id',
+        'language',
+        'delta',
+        'field_list_image_fid',
+        'field_list_image_alt',
+        'field_list_image_title',
+        'field_list_image_width',
+        'field_list_image_height'
+      ))
+      ->execute()
+      ->fetchAll();
+
+    foreach ($result as $object) {
+      $row = array(
+        'entity_type' => $object->entity_type,
+        'bundle' => $object->bundle,
+        'deleted' => $object->deleted,
+        'entity_id' => $object->entity_id,
+        'revision_id' => $object->revision_id,
+        'language' => $object->language,
+        'delta' => $object->delta,
+        'field_page_list_image_fid' => $object->field_list_image_fid,
+        'field_page_list_image_alt' => $object->field_list_image_alt,
+        'field_page_list_image_title' => $object->field_list_image_title,
+        'field_page_list_image_width' => $object->field_list_image_width,
+        'field_page_list_image_height' => $object->field_list_image_height,
+      );
+
+      db_insert($to)
+        ->fields($row)
+        ->execute();
+    }
+  }
+
+  drupal_flush_all_caches();
+}
