@@ -61,5 +61,16 @@ function ding_page_update_7002() {
     }
   }
 
+  // Fields to be removed from ctype.
+  $fields = array(
+    'field_list_image' => 'ding_page',
+    'field_main_image' => 'ding_page',
+  );
+
+  foreach ($fields as $field => $bundle) {
+    $instance = field_info_instance('node', $field, $bundle);
+    field_delete_instance($instance);
+  }
+
   drupal_flush_all_caches();
 }
