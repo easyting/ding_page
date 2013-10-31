@@ -253,7 +253,7 @@ function ding_page_field_default_fields() {
           'weight' => '1',
         ),
         'related_category_items' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
             'trim_length' => '100',
@@ -430,7 +430,7 @@ function ding_page_field_default_fields() {
           'weight' => 0,
         ),
         'related_category_items' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'image_link' => 'content',
