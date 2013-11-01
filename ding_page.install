@@ -55,7 +55,15 @@ function ding_page_update_7002() {
         'field_page_list_image_height' => $object->field_list_image_height,
       );
 
-      db_insert($to)
+      db_merge($to)
+        ->key(array(
+          'entity_type' => $row['entity_type'],
+          'entity_id' => $row['entity_id'],
+          'revision_id' => $row['revision_id'],
+          'deleted' => $row['deleted'],
+          'delta' => $row['delta'],
+          'language' => $row['language'],
+        ))
         ->fields($row)
         ->execute();
     }
