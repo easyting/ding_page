@@ -344,14 +344,14 @@ function ding_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ding_page-field_list_image'.
-  $fields['node-ding_page-field_list_image'] = array(
+  // Exported field: 'node-ding_page-field_page_list_image'.
+  $fields['node-ding_page-field_page_list_image'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_list_image',
+      'field_name' => 'field_page_list_image',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
