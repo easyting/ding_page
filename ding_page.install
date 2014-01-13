@@ -55,9 +55,23 @@ function ding_page_update_7002() {
         'field_page_list_image_height' => $object->field_list_image_height,
       );
 
-      db_insert($to)
-        ->fields($row)
-        ->execute();
+      try {
+        db_insert($to)
+          ->fields($row)
+          ->execute();
+      }
+      catch (Exception $e) {
+        $existing = db_select($to, 'f')->fields('f')
+          ->condition('entity_id', $row['entity_id'],'=')
+          ->condition('delta', $row['delta'],'=')
+          ->condition('revision_id', $row['revision_id'],'=')
+          ->execute()->fetchAssoc();
+
+        $diff = array_diff($row, $existing);
+        if (!empty($diff)) {
+          drupal_set_message($e->getMessage(), 'warning');
+        }
+      }
     }
   }
 

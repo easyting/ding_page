@@ -62,6 +62,12 @@ function ding_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => '6',
         ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '1',
+        ),
         'search_index' => array(
           'label' => 'above',
           'settings' => array(),
@@ -162,6 +168,12 @@ function ding_page_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '3',
         ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
         'teaser' => array(
           'label' => 'inline',
           'module' => 'taxonomy',
@@ -239,6 +251,15 @@ function ding_page_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '1',
+        ),
+        'related_category_items' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => '100',
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -330,6 +351,16 @@ function ding_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'related_category_items' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'content',
+            'image_style' => 'ding_small',
+          ),
+          'type' => 'image',
+          'weight' => '0',
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'image',
@@ -397,7 +428,6 @@ function ding_page_field_default_fields() {
   t('Body');
   t('Category');
   t('List image');
-  t('Materials');
   t('Tags');
 
   return $fields;
